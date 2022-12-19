@@ -11,7 +11,7 @@ class PageController extends Controller
     //
     public function index()
     {
-        $trains = train::all();
+        $trains = train::where('orario_di_partenza', '>=', date("Y-m-d H:i:s"))->get();
         return view('home', compact('trains'));
     }
 }
