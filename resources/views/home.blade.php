@@ -4,13 +4,20 @@
 
 @section('content')
     <div class="container">
-        <h1>Treno in partenza oggi</h1>
+        <h1>lista treni</h1>
 
         <ul>
             @foreach ($trains as $train)
                 <li>
-                    {{ $train->orario_di_partenza }}
+                    Azienda:{{ $train->azienda }}
                 </li>
+                <li>
+                    In partenza da :{{ $train->stazione_di_partenza }}
+                </li>
+                <li>
+                    In arrivo da :{{ $train->stazione_di_arrivo }}
+                </li>
+                <br>
             @endforeach
         </ul>
     </div>
